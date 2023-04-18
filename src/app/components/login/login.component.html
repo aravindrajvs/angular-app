@@ -1,25 +1,30 @@
-<div class="w-25 m-auto mt-5">
-    <form>
+<div class="w-50 m-auto mt-5">
+    <form  #loginForm="ngForm" (ngSubmit)="onSubmit()" >
 
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        <h1 class="h3 mb-3 fw-normal">Please Sign in</h1>
 
         <div class="mb-3">
-            <label for="mailid">Email address</label>
-            <input type="email" class="form-control" id="mailid" placeholder="name@example.com">
+            <label for="mailid" >Email address</label>
+            <input [(ngModel)]="login.email" 
+            type="email" class="form-control mb-2 mt-2" id="email" name="email"  placeholder="Enter Mail Id" required>
 
         </div>
-        <div class="mb-3">
+        <div class=" mb-3">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <input [(ngModel)]="login.password"  type="password" class="form-control mb-2 mt-2" id="password" name="password"  minlength="10" placeholder="Password" required>
 
         </div>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
+        <div class="w-25 m-auto ">
+            <button class="w-100 btn btn-lg btn-primary mb-3" type="submit" [disabled]="!loginForm.valid" >Sign in</button>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+        <div class="w-25 m-auto mb-3">
+            <button class="w-100 btn btn-lg btn-primary mb-3" type="button" routerLink="/signup"  >Register</button>
+            
+        </div>
+
+
     </form>
 
 </div>

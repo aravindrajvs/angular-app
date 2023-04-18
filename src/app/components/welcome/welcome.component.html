@@ -1,1 +1,13 @@
-<p>welcome works!</p>
+<div class="card">
+    <div class="card-header">
+      Welcome  {{user.name}}!  <button class="btn btn-sm btn-primary float-end" type="button" (click)="logout()">Logout</button>
+    </div>
+    <div class="card-body">
+      
+        <p>Your Mail Id is {{user.email}}</p>
+
+        <p>Your Phone Number is {{user.phoneNumber}}</p>
+       
+        
+    </div>
+  </div>
